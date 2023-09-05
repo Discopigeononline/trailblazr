@@ -3,7 +3,7 @@
 <div>
   <% @itineraries.each do |itinerary| %>
     <ul>
-      <%= link_to itinerary.title, itinerary_path(itinerary) %>
+      <li><%= link_to itinerary.title, itinerary_path(itinerary) %></li>
     </ul>
   <% end %>
 </div>
