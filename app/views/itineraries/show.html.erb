@@ -60,7 +60,7 @@
                     <%= link_to edit_selection_path(selection)  do %>
                       <i class="fa-regular fa-square-plus text-primary" data-action="click->add-activity-to-day#displayForm"></i>
                     <% end %>
-                    <%= link_to selection_path(selection.activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  do %>
+                    <%= link_to selection_path(selection), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  do %>
                       <i class="fa-regular fa-trash-can text-danger d-none"></i>
                     <% end %>
                   </div>
@@ -75,7 +75,14 @@
         <div>
         <%# group_by day hash in controller day on selection model %>
         <% @selections_with_days.each do |day, selection| %>
-          <div> <i class="fa-regular fa-calendar-days"></i> Day <%= day %></div>
+          <div class="d-flex">
+            <div><i class="fa-regular fa-calendar-days"></i> Day <%= day %></div>
+            <div>
+              <%= link_to selection_path(selection), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-regular fa-trash-can text-danger"></i>
+              <% end %>
+            </div>
+            </div>
           <% selection.each do |selection| %>
             <div class="mb-2">
               <%=selection.activity.name %>
