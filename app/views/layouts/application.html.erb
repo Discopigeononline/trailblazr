@@ -13,28 +13,26 @@
   </head>
 
   <body>
-  <div class="container-fluid" data-controller="sidebar-toggler">
-    <div class="row section" >
-      <%= render "shared/navbar" %>
-      <% unless controller_name == 'sessions' ||
-      controller_name == 'passwords' ||
-      controller_name == 'registrations' ||
-      controller_name == 'pages' && action_name == 'home' %>
-        <div class="col-3" data-sidebar-toggler-target="sidebar">
-          <%= render "shared/sidebar" %>
+    <% if controller_name == 'pages' && action_name == 'home' %>
+      <%= yield %>
+    <% else %>
+      <div class="container-fluid" data-controller="sidebar-toggler">
+        <div class="row section" >
+          <%= render "shared/navbar" %>
+          <% unless controller_name == 'sessions' ||
+          controller_name == 'passwords' ||
+          controller_name == 'registrations' ||
+          controller_name == 'pages' && action_name == 'home' %>
+            <div class="col-3" data-sidebar-toggler-target="sidebar">
+              <%= render "shared/sidebar" %>
+            </div>
+          <% end %>
+            <div class="col-9" data-sidebar-toggler-target="body">
+              <%= yield %>
+            </div>
         </div>
-      <% end %>
-      <% unless controller_name == 'pages' && action_name == 'home' %>
-        <div class="col-9" data-sidebar-toggler-target="body">
-          <%= yield %>
-        </div>
-      <% else %>
-        <div class="" data-sidebar-toggler-target="body">
-          <%= yield %>
-        </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
     <%= render "shared/flashes" %>
-  </div>
   </body>
 </html>

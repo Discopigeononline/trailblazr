@@ -9,6 +9,7 @@ class CollaborationsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @itinerary = Itinerary.find(params[:itinerary_id])
     @collaboration = Collaboration.new(collaboration_params)
     @collaboration.itinerary = @itinerary
@@ -16,6 +17,8 @@ class CollaborationsController < ApplicationController
     authorize @collaboration
 
     if @collaboration.save
+      UserMailer.with(user: @collaboration.user, itinerary: @itinerary).hello.deliver_now
+      # render json: @user, status: :created
       redirect_to itinerary_path(@itinerary)
     else
       @message = Message.new

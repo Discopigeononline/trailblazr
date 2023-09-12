@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_10_090540) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_10_110335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_090540) do
     t.index ["user_id"], name: "index_collaborations_on_user_id"
   end
 
+  create_table "days", force: :cascade do |t|
+    t.integer "position"
+    t.date "date"
+    t.bigint "itinerary_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["itinerary_id"], name: "index_days_on_itinerary_id"
+  end
+
   create_table "itineraries", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -125,6 +134,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_090540) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "collaborations", "itineraries"
   add_foreign_key "collaborations", "users"
+  add_foreign_key "days", "itineraries"
   add_foreign_key "messages", "itineraries"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "selections"

@@ -1,4 +1,43 @@
-<div class="banner">
+
+<% unless user_signed_in? %>
+  <div id="home-login">
+    <%= link_to "Login", new_user_session_path %>
+  </div>
+<% end %>
+
+<section class="parallax" >
+  <div data-controller="parallax" data-action="scroll->parallax#handleScroll">
+    <div>
+      <%= image_tag("hill1.png", id: "hill1", data: { parallax_target: "hill1" }) %>
+    </div>
+    <div>
+      <%= image_tag("hill2.png", id: "hill2") %>
+    </div>
+    <div>
+      <%= image_tag("hill3.png", id: "hill3") %>
+    </div>
+    <div>
+      <%= image_tag("hill4.png", id: "hill4", data: { parallax_target: "hill4" }) %>
+    </div>
+    <div >
+      <%= image_tag("hill5.png", id: "hill5",  data: { parallax_target: "hill5" }) %>
+    </div>
+    <div data-parallax-target="tree">
+      <%= image_tag("tree.png" ,id: "tree") %>
+    </div>
+    <div id="div-text" data-parallax-target="text">
+      <h1 id="text">TrailBlazr</h1>
+    </div>
+    <div>
+      <%= image_tag("leaf.png" ,id: "leaf",  data: { parallax_target: "leaf" }) %>
+    </div>
+    <div data-parallax-target="plant">
+      <%= image_tag("plant.png", id: "plant") %>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
   <div class="row">
     <div class="col-12">
       <%= form_tag(activities_path, method: "get") do  %>
@@ -13,4 +52,8 @@
       <% end %>
     </div>
   </div>
-</div>
+
+</section>
+<%# 
+<div class="banner">
+</div> %>

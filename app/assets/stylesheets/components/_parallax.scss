@@ -1,0 +1,63 @@
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#home-login {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 100;
+}
+
+#home-login a {
+  text-decoration: none;
+  color: #359381;
+  border-radius: 20px;
+  padding: 6px 15px;
+  margin: 0 10px;
+  font-weight: 400;
+}
+
+#home-login a:hover {
+  background-color: #359381;
+  color: #fff;
+}
+
+#div-text {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#text {
+  position: absolute;
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: $headers-font;
+  letter-spacing: 1rem;
+  font-size: 120px;
+}
+
+.parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.sec {
+  position: relative;
+  height: 100vh;
+  background-color: #003329;
+  padding: 100px;
+}
