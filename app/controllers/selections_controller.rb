@@ -83,14 +83,14 @@ class SelectionsController < ApplicationController
   # end
 
   def destroy
-    @day_selection = Selection.find(params[:id])
+    @selection = Selection.find(params[:id])
 
     # @selections = Selection.where(itinerary_id: @day_selection.itinerary_id)
 
     # @selections_with_days = @selections.reject { |s| s.day.nil? }.group_by(&:day).sort_by(&:first)
 
     # deleted_selection = @day_selection
-    if @day_selection.destroy
+    if @selection.destroy
       # index = 0
       # @selections_with_days.each do |array|
       #   array[1].each do |selection|
@@ -108,9 +108,9 @@ class SelectionsController < ApplicationController
       #   selection.day = index + 1
       #   selection.save
       # end
-      redirect_to itinerary_path(@day_selection)
+      redirect_to itinerary_path(@selection)
     end
-    authorize @day_selection
+    authorize @selection
   end
 
   def new

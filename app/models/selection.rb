@@ -5,7 +5,7 @@ class Selection < ApplicationRecord
   has_many :messages
   has_many :reviews
 
-  # before_destroy :reorder_days
+  before_destroy :reorder_days
 
   # accepts_nested_attributes_for :itinerary
   # accepts_nested_attributes_for :activity
