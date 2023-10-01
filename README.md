@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the amazing TrailBlazr team composed of [Jiaqu](https://github.com/Nadia-OvO), [Sophie](https://github.com/Chofa09), [Andrés](https://github.com/a-castellani), [Paul](https://github.com/paul77uk) and myself!
+Check out the presentation on [Youtube!](https://www.youtube.com/watch?v=6xIw0E5fdpA)
