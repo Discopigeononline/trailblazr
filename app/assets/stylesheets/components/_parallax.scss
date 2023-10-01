@@ -1,3 +1,13 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 body {
   min-height: 100vh;
@@ -25,7 +35,6 @@ header {
   padding: 10px 15px;
   margin: 0 10px;
   font-family: $headers-font;
-  // font-weight: bold;
 }
 
 .home-nav a:hover {
@@ -38,6 +47,7 @@ header {
  justify-content: center;
  align-items: center;
 }
+
 .parallax {
   position: relative;
   display: flex;
